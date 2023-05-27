@@ -25,9 +25,9 @@ class MyViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapt
         }
     }
 
-    fun updateFragment()
+    fun updateUrl()
     {
-        (list[1] as NoticeSeeFragment).binding.webView.loadUrl(url)
+        (list[1] as NoticeSeeFragment).updateUrl(url)
     }
 
 }

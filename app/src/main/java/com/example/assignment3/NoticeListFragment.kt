@@ -70,7 +70,7 @@ class NoticeListFragment : Fragment() {
                 }
 
                 override fun onQueryTextChange(str: String): Boolean {
-                    adapter.getFilter().filter(str)
+                    adapter.filter.filter(str)
                     return false
                 }
             }
@@ -89,7 +89,14 @@ class NoticeListFragment : Fragment() {
 
         adapter.itemClickListener = object:MyAdapter.OnItemClickListener{
             override fun OnItemClick(position: Int) {
-                (requireActivity() as MainActivity).changeURL(adapter.items[position].url)
+                if(adapter.flag)
+                {
+                    (requireActivity() as MainActivity).changeURL(adapter.filteredItems[position].url)
+                }else
+                {
+                    (requireActivity() as MainActivity).changeURL(adapter.items[position].url)
+                }
+
             }
 
         }

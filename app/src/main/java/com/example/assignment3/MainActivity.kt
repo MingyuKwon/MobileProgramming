@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     fun changeURL(url : String) {
         (binding.viewPager.adapter as MyViewPagerAdapter).url = url
-        (binding.viewPager.adapter as MyViewPagerAdapter).updateFragment()
+        (binding.viewPager.adapter as MyViewPagerAdapter).updateUrl()
     }
 
 

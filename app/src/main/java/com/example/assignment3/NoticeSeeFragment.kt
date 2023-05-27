@@ -10,7 +10,7 @@ import com.example.assignment3.databinding.FragmentNoticeSeeBinding
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
 class NoticeSeeFragment : Fragment() {
-    lateinit var binding: FragmentNoticeSeeBinding
+    var binding: FragmentNoticeSeeBinding? = null
     lateinit var url : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,12 +24,23 @@ class NoticeSeeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         binding = FragmentNoticeSeeBinding.inflate(inflater, container ,false)
-        binding.webView.loadUrl(url)
-        binding.webView.settings.builtInZoomControls = true
-        binding.webView.settings.supportZoom()
-        return binding.root
+        binding!!.webView.loadUrl(url)
+        binding!!.webView.settings.builtInZoomControls = true
+        binding!!.webView.settings.supportZoom()
+        return binding!!.root
+    }
+
+    fun updateUrl(_url : String)
+    {
+        url = _url
+
+        if(binding != null)
+        {
+            binding!!.webView.loadUrl(url)
+        }
     }
 
     companion object {
