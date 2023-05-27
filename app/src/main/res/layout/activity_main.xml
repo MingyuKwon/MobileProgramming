@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:background="@drawable/input_box_outline"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="97dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/text_style"
+                android:gravity="center"
+                android:text="  Priority  "
+                android:textSize="15dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <Spinner
+                android:id="@+id/PriorityInput"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:entries="@array/todo_priority"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/text_style"
+                android:gravity="center"
+                android:text="  Time Taken  "
+                android:textSize="15dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <Spinner
+                android:id="@+id/TakenTimeInput"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:entries="@array/todo_TimeTaken"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="97dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/text_style"
+                android:gravity="center"
+                android:text="  DeadLine  "
+                android:textSize="10dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text=" Y : "
+                android:textSize="10dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <Spinner
+                android:id="@+id/YearInput"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.3"
+                android:entries="@array/year"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="  M : "
+                android:textSize="10dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+
+            <Spinner
+                android:id="@+id/MonthInput"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:entries="@array/month"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="  D : "
+                android:textSize="10dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <Spinner
+                android:id="@+id/DayInput"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:entries="@array/day"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_style"
+            android:ems="10"
+            android:hint="할일을 입력하세요"
+            android:inputType="text"
+            android:padding="6dp"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="174dp"
+            tools:layout_editor_absoluteY="77dp" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ToDoRecycle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/edit_text_style"
+        android:layout_margin="5dp"
+        />
+
+
+</LinearLayout>
